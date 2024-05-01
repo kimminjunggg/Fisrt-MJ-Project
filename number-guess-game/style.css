@@ -28,7 +28,51 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
-#container {    
+/* 스타트 화면 */
+#start-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color:  rgb(119, 119, 209);
+}
+
+#main-text-click {
+    cursor: pointer;
+}
+
+#start-container .start-mainText {
+    display: flex;
+    width: calc(100% - 500px);
+    margin: 0 auto;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+#start-container .start-mainText button {
+    border: none;
+    color: #fff;
+    font-size: 5rem;
+    background-color: rgb(119, 119, 209);
+    cursor: pointer;
+}
+
+.start-mainText .game-rule {
+    width: 80%;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px 30px;
+    color: #fff;
+    font-weight: 100;
+    border: 1px solid #fff;
+}
+
+#container {   
     margin: 0 auto;
     height: 100%;
     position: relative;
@@ -63,23 +107,31 @@ input[type='number'] {
     align-items: center;
     flex-direction: column;
     padding: 20px 0;
+    margin-top: 20px;
 }
 
 .playContainer #result-area {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .playContainer #chance-area {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 100;
     text-align: left;
     width: 100%;
 }
 
 #user-input {
-    margin: 0 0 20px 0;
+    margin: 0 0 5px 0;
     height: 50px;
     width: 100%;
+    font-size: 25px;
+    padding-bottom: 5px;
+    text-align: center;
     border-left: none;
     border-right: none;
     border-top: none;
@@ -106,9 +158,35 @@ input[type='number'] {
     color: #fff;
     background-color: rgb(119, 119, 209);
     margin-bottom: 12px;
+    cursor: pointer;
 }
 
 #play-button {
     margin-right: 3px;
 }
 
+@media screen and (max-width: 992px) {
+    #start-container .start-mainText  {
+        width: calc(100% - 220px);
+    }
+    
+}
+
+
+@media screen and (max-width: 600px) {
+    #start-container .start-mainText  {
+        width: calc(100% - 60px);
+    }
+
+    #start-button {
+        font-size: 3rem;
+    }
+
+    #start-container .start-mainText button {
+        font-size: 5rem;
+    }
+
+    .start-mainText .game-rule {
+        font-size: 1rem;
+    }
+}
